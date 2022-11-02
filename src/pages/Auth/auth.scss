@@ -1,0 +1,53 @@
+@import '/src/styles/basic.scss';
+
+.Auth {
+  width: 400px;
+  height: 400px;
+  margin: 0px auto;
+  margin-top: 20vh;
+  background-color: rgb(239, 239, 239);
+  text-align: center;
+
+  .auth-title {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 70px;
+    font-family: $fontType-merriweather;
+  }
+
+  .email-input {
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    background-color: transparent;
+  }
+
+  .email-input:focus {
+    outline: none;
+  }
+
+  .password-input {
+    width: 250px;
+    border: none;
+    margin-top: 20px;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    background-color: transparent;
+  }
+  .password-input:focus {
+    outline: none;
+  }
+
+  .toggle-sign-btn {
+    margin: 10px;
+    border: none;
+    font-family: $fontType-merriweather;
+    cursor: pointer;
+  }
+
+  .google-btn {
+    font-size: 30px;
+    width: 100px;
+  }
+}

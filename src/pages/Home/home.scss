@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
+@import '/src/styles/basic.scss';
+
+.home {
+  width: 1250px;
+  height: 700px;
+  margin: 0px auto;
+
+  .main-box {
+    display: flex;
+    width: 1050px;
+    height: 600px;
+    margin: 0px auto;
+
+    .main-left {
+      position: relative;
+      width: 500px;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 99;
+      }
+
+      .numbering-title {
+        position: absolute;
+        bottom: 80%;
+        left: 5%;
+        font-family: $fontType-merriweather;
+        font-size: 30px;
+        color: $fontColor-white;
+      }
+
+      .social-title {
+        position: absolute;
+        bottom: 2%;
+        left: 60%;
+        font-family: $fontType-merriweather;
+        font-size: 25px;
+        color: $fontColor-white;
+      }
+    }
+
+    .main-right {
+      width: 550px;
+      height: 600px;
+
+      .images-top {
+        display: flex;
+        width: 100%;
+        height: 300px;
+
+        .image-top-box-left {
+          position: relative;
+
+          .image-top-left {
+            width: 275px;
+            height: 300px;
+            object-fit: cover;
+          }
+
+          .top-left-numbering-title {
+            position: absolute;
+            top: 1%;
+            left: 5%;
+            font-size: $fontSize-20;
+            font-family: $fontType-merriweather;
+            color: $fontColor-white;
+          }
+
+          .top-left-social-title {
+            position: absolute;
+            bottom: 3%;
+            left: 55%;
+            font-size: $fontSize-20;
+            font-family: $fontType-merriweather;
+            color: $fontColor-white;
+          }
+        }
+        
+        .image-top-box-right {
+          position: relative;
+
+          .image-top-right {
+            width: 275px;
+            height: 300px;
+            object-fit: cover;
+          }
+
+          .top-right-numbering-title {
+            position: absolute;
+            top: 1%;
+            left: 5%;
+            font-size: $fontSize-20;
+            font-family: $fontType-merriweather;
+            color: $fontColor-white;
+          }
+
+          .top-right-social-title {
+            position: absolute;
+            bottom: 3%;
+            left: 55%;
+            font-size: $fontSize-20;
+            font-family: $fontType-merriweather;
+            color: $fontColor-white;
+          }
+        }
+      }
+
+      .images-bottom {
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        width: 100%;
+        height: 300px;
+
+        .image-bottom-box {
+          position: relative;
+          display: flex;
+
+          .image-bottom-left {
+            width: 260px;
+            height: 285px;
+            object-fit: cover;
+          }
+
+          .bottom-numbering-title {
+            position: absolute;
+            top: 2%;
+            left: 5%;
+            color: $fontColor-white;
+            font-family: $fontType-merriweather;
+            font-size: $fontSize-20;
+          }
+
+          .bottom-social-title {
+            position: absolute;
+            bottom: 2%;
+            left: 55%;
+            color: $fontColor-white;
+            font-family: $fontType-merriweather;
+            font-size: $fontSize-20;
+          }
+        }
+
+        .title-bottom-right {
+          width: 275px;
+          height: 250px;
+          text-align: end;
+          font-size: 60px;
+          font-family: $fontType-nanumMyeongjo;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .home {
+    width: 100vw;
+
+    .main-box {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+
+      .main-left {
+        width: 100vw;
+
+        .social-title {
+          left: 50%;
+        }
+      }
+
+      .main-right {
+        width: 100vw;
+
+        .images-top {
+  
+          .image-top-box-left {
+  
+            .image-top-left {
+              width: 50vw;
+            }
+  
+            .top-left-social-title {
+              left: 50%;
+              font-size: $fontSize-15;
+            }
+          }
+          
+          .image-top-box-right {
+  
+            .image-top-right {
+              width: 50vw;
+            }
+  
+            .top-right-social-title {
+              left: 50%;
+              font-size: $fontSize-15;
+            }
+          }
+        }
+
+        .images-bottom {
+  
+          .image-bottom-box {
+  
+            .image-bottom-left {
+              width: 50vw;
+              height: 300px;
+            }
+  
+            .bottom-social-title {
+              font-size: $fontSize-15;
+            }
+          }
+  
+          .title-bottom-right {
+            padding-right: 20px;
+            font-size: 50px;
+          }
+        }
+      }
+    }
+  }
+}
