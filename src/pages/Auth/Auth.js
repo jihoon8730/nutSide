@@ -20,7 +20,7 @@ const Auth = () => {
 
   const auth = getAuth();
 
-  // email & password
+  // email & password.
   const onChangeInputValue = (event) => {
     const {
       target: { name, value },
