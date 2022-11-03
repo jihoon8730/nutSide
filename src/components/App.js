@@ -7,15 +7,14 @@ import "normalize.css";
 function App() {
   const [loadingInit, setLoadingInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [userObj, setUserObj] = useState(null);
   //user login true & false
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const uid = user.uid;
-        console.log(uid);
         setIsLoggedIn(true);
+        setUserObj(user);
       } else {
         setIsLoggedIn(false);
       }
@@ -25,7 +24,11 @@ function App() {
 
   return (
     <>
-      {loadingInit ? <AppRouter isLoggedIn={isLoggedIn} /> : "Initializing..."}
+      {loadingInit ? (
+        <AppRouter userObj={userObj} isLoggedIn={isLoggedIn} />
+      ) : (
+        "Initializing..."
+      )}
     </>
   );
 }
