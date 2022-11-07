@@ -28,10 +28,12 @@ const Postlist = ({ userObj }) => {
       {userStyle.map((styleInfo) => {
         return (
           <div key={styleInfo.createId}>
+            <div>{styleInfo.sns}</div>
             <div>{styleInfo.comment}</div>
+            <div>{styleInfo.outer}</div>
             <div>{styleInfo.top}</div>
             <div>{styleInfo.bottom}</div>
-            <div>{styleInfo.sns}</div>
+            <div>{styleInfo.imageFileUrl}</div>
           </div>
         );
       })}
