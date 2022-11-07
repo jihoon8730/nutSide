@@ -15,7 +15,7 @@ library.add(fab);
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newAccount, setNewAccount] = useState(true);
+  const [newAccount, setNewAccount] = useState(false);
   const [displayError, setDisplayError] = useState("");
 
   const auth = getAuth();
@@ -51,7 +51,6 @@ const Auth = () => {
           console.log(user);
         })
         .catch((error) => {
-          console.log(error);
           setDisplayError(error.message);
         });
     }

@@ -7,8 +7,11 @@ const Logout = () => {
   const goToLogin = useNavigate();
   const onLogoutClick = () => {
     const auth = getAuth();
-    signOut(auth);
-    goToLogin("/");
+    const isLogout = window.confirm("로그아웃 할래요?");
+    if (isLogout) {
+      signOut(auth);
+      goToLogin("/");
+    }
   };
 
   return (

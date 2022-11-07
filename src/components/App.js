@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AppRouter from "./Router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Spinner from "./Spinner";
 import "./App.scss";
 import "normalize.css";
 
@@ -8,6 +9,7 @@ function App() {
   const [loadingInit, setLoadingInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userObj, setUserObj] = useState(null);
+
   //user login true & false
   useEffect(() => {
     const auth = getAuth();
@@ -27,7 +29,7 @@ function App() {
       {loadingInit ? (
         <AppRouter userObj={userObj} isLoggedIn={isLoggedIn} />
       ) : (
-        "Initializing..."
+        <Spinner />
       )}
     </>
   );
