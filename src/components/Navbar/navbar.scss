@@ -16,6 +16,12 @@
     font-family: $fontType-merriweather;
     font-size: 30px;
     text-align: center;
+    cursor: pointer;
+  }
+
+  .profile {
+    display: flex;
+    gap: 20px;
   }
 }
 
