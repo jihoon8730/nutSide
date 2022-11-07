@@ -1,0 +1,43 @@
+.Detail {
+  width: 1050px;
+  height: auto;
+  margin: 0px auto;
+  margin-top: 50px;
+
+  .detail-view {
+    position: relative;
+    width: 500px;
+    height: auto;
+    margin: 0px auto;
+    background-color: rgb(68, 68, 68);
+
+    .detail-image {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .detail-contents {
+    height: auto;
+    padding: 10px 10px 10px 15px;
+    background-color: rgb(68, 68, 68);
+    color: #eeeeee;
+  }
+  .like-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    bottom: 17%;
+    right: 5%;
+    border: 0px;
+    color: #eeeeee;
+    background-color: transparent;
+    font-size: 40px;
+    cursor: pointer;
+
+    .like-count {
+      font-size: 25px;
+    }
+  }
+}

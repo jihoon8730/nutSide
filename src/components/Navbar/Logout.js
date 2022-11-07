@@ -7,7 +7,7 @@ const Logout = () => {
   const goToLogin = useNavigate();
   const onLogoutClick = () => {
     const auth = getAuth();
-    const isLogout = window.confirm("로그아웃 할래요?");
+    const isLogout = window.confirm("로그아웃 하시겠습니까");
     if (isLogout) {
       signOut(auth);
       goToLogin("/");

@@ -2,6 +2,7 @@
   width: 1050px;
   height: 600px;
   margin: 0px auto;
+  margin-top: 50px;
   
   .post-form-left {
     position: relative;
@@ -55,18 +56,37 @@
       width: 400px;
       height: 500px;
       margin: 0px auto;
-      border: 3px dotted rgb(172, 172, 172);;
+      border: 5px dotted rgb(172, 172, 172);
 
       .post-image-input {
         position: absolute;
         top: 220px;
-        left: 150px;
+        left: 155px;
+        padding: 10px 20px;
+        background-color: rgb(68, 68, 68);
+        color: #eeeeee;
+        font-size: 20px;
+        opacity: 0.8;
+        cursor: pointer;
       }
 
       .post-image {
         width: 400px;
         height: 500px;
         object-fit: cover;
+      }
+
+      .clear-btn {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        padding: 5px 20px;
+        border: 0px;
+        background-color: #ffffff;
+        color: rgb(68, 68, 68);
+        font-size: 20px;
+        opacity: 0.5;
+        cursor: pointer;
       }
     }
   }

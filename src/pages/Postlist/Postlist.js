@@ -1,43 +1,50 @@
-import React, { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
+import "./postlist.scss";
 
-const Postlist = ({ userObj }) => {
+const Postlist = ({ userObj, userStyle, setUserStyle }) => {
   console.log(userObj.uid);
-  const [userStyle, setUserStyle] = useState([]);
-  console.log(userStyle);
+  const goToDetail = useNavigate();
 
-  // getStyle Read
-  const getStyle = async () => {
-    const querySnapshot = await getDocs(collection(db, `nutside`));
-    querySnapshot.forEach((doc) => {
-      const userStyleObject = {
-        ...doc.data(),
+  const onLikeTopSort = async () => {
+    const q = query(collection(db, "nutside"), orderBy("like", "desc"));
+    onSnapshot(q, (snapshot) => {
+      const userStyleArr = snapshot.docs.map((doc) => ({
         id: doc.id,
-      };
-      // array return
-      setUserStyle((prev) => [userStyleObject, ...prev]);
+        ...doc.data(),
+      }));
+      setUserStyle(userStyleArr);
     });
   };
-  useEffect(() => {
-    getStyle();
-  }, []);
 
   return (
-    <div>
-      {userStyle.map((styleInfo) => {
-        return (
-          <div key={styleInfo.createId}>
-            <div>{styleInfo.sns}</div>
-            <div>{styleInfo.comment}</div>
-            <div>{styleInfo.outer}</div>
-            <div>{styleInfo.top}</div>
-            <div>{styleInfo.bottom}</div>
-            <div>{styleInfo.imageFileUrl}</div>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <button onClick={onLikeTopSort}>top</button>
+      <div className="Postlist">
+        {userStyle.map((styleInfo) => {
+          return (
+            <div
+              className="cards"
+              key={styleInfo.id}
+              onClick={() => {
+                goToDetail(`/detail/${styleInfo.id}`);
+              }}
+            >
+              <div className="card-title">{styleInfo.sns}</div>
+              <img
+                className="card-image"
+                src={styleInfo.imageUrl}
+                alt="image load fail..."
+                width="200px"
+                height="300px"
+              ></img>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

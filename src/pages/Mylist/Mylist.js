@@ -3,21 +3,7 @@ import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "../../firebase";
 import StyleEdit from "../../components/StyleEdit";
 
-const Postlist = ({ userObj }) => {
-  const [userStyle, setUserStyle] = useState([]);
-
-  // getStyle Read
-  useEffect(() => {
-    const q = query(collection(db, "nutside"), orderBy("createAt", "desc"));
-    onSnapshot(q, (snapshot) => {
-      const userStyleArr = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setUserStyle(userStyleArr);
-    });
-  }, []);
-
+const Mylist = ({ userObj, userStyle, setUserStyle }) => {
   return (
     <div>
       {userStyle.map((styleInfo) => {
@@ -33,4 +19,4 @@ const Postlist = ({ userObj }) => {
   );
 };
 
-export default Postlist;
+export default Mylist;
