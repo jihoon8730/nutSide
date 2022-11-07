@@ -13,6 +13,9 @@ const Post = ({ userObj }) => {
   const [addUserBottomInfo, setAddUserBottomInfo] = useState("");
   const [addUserSns, setAddUserSns] = useState("");
   const [addUserOuter, setAddUserOuter] = useState("");
+  const [addUserLike, setAddUserLike] = useState(0);
+  const [addUserLikeList, setAddUserLikeList] = useState([]);
+  // const [addUserRanking, setAddUserRanking] = useState();
 
   const [attachment, setAttachment] = useState("");
 
@@ -58,23 +61,30 @@ const Post = ({ userObj }) => {
       createAt: new Date(),
       createId: userObj.uid,
       imageUrl: imageFileUrl,
+      like: addUserLike,
+      likelist: addUserLikeList,
+      // ranking: addUserRanking,
     };
-    try {
-      const addStyleDatabasePush = await addDoc(
-        collection(db, "nutside"),
-        styleInfoData
-      );
-      setAddUserComment("");
-      setAddUserTopInfo("");
-      setAddUserBottomInfo("");
-      setAddUserSns("");
-      setAddUserOuter("");
-      setAttachment("");
-      console.log("docRef Id :", addStyleDatabasePush.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+    if (addUserSns === "") {
+      alert("SNS계정을 입력해주세요.");
+    } else {
+      try {
+        const addStyleDatabasePush = await addDoc(
+          collection(db, "nutside"),
+          styleInfoData
+        );
+        setAddUserComment("");
+        setAddUserTopInfo("");
+        setAddUserBottomInfo("");
+        setAddUserSns("");
+        setAddUserOuter("");
+        setAttachment("");
+        console.log("docRef Id :", addStyleDatabasePush.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+      goToPostList();
     }
-    goToPostList();
   };
 
   // image File
@@ -149,18 +159,26 @@ const Post = ({ userObj }) => {
           <input className="Add-btn" type="submit" value="Add" />
           <div className="post-form-right">
             {attachment ? null : (
-              <input
-                className="post-image-input"
-                type="file"
-                accept="image/*"
-                onChange={onFileChange}
-              />
+              <>
+                <label className="post-image-input" for="input-file">
+                  PHOTO
+                </label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={onFileChange}
+                  id="input-file"
+                  style={{ display: "none" }}
+                />
+              </>
             )}
 
             {attachment && (
               <div>
                 <img src={attachment} className="post-image" />
-                <button onClick={onClearPhotoClick}>Clear</button>
+                <button className="clear-btn" onClick={onClearPhotoClick}>
+                  Clear
+                </button>
               </div>
             )}
           </div>
