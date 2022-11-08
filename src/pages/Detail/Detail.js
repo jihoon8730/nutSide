@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from "react";
-import {
-  collection,
-  onSnapshot,
-  query,
-  orderBy,
-  updateDoc,
-  doc,
-  arrayUnion,
-  arrayRemove,
-} from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { updateDoc, doc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase";
-import "./detail.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
+import "./detail.scss";
 
 const Detail = ({ userObj, userStyle }) => {
   const [commentsValue, setCommentsValue] = useState([]);
@@ -38,6 +29,7 @@ const Detail = ({ userObj, userStyle }) => {
     // await updateDoc(washingtonRef, {
     //   regions: arrayRemove("east_coast")
     // });
+
     if (!isLike) {
       await updateDoc(userStyleDoc, {
         like: userId?.like + 1,
@@ -56,6 +48,7 @@ const Detail = ({ userObj, userStyle }) => {
     updateDoc(userStyleDoc, {
       styleComments: arrayUnion(commentsValue),
     });
+    setCommentsValue("");
   };
 
   const onCommentChange = async (event) => {
@@ -67,8 +60,12 @@ const Detail = ({ userObj, userStyle }) => {
     }
   };
 
+  const userCommentLength = userId?.styleComments?.length;
+
   return (
     <div className="Detail">
+      <p className="detail-title">{userId?.sns}</p>
+      <div className="detail-comment">{userId?.comment}</div>
       <div key={userId} className="detail-view">
         <img
           className="detail-image"
@@ -77,30 +74,39 @@ const Detail = ({ userObj, userStyle }) => {
           width="200px"
         />
         <div className="detail-contents">
-          <div>SNS : {userId?.sns}</div>
           <div>TOP : {userId?.top}</div>
-          <div>Bottom :{userId?.bottom}</div>
+          <div>Bottom : {userId?.bottom}</div>
           <div>Outer : {userId?.outer}</div>
-          <div>Comment : {userId?.comment}</div>
         </div>
 
         <button className="like-btn" onClick={onLikeCount}>
-          <p className="like-count">{userId?.like}</p>
           <FontAwesomeIcon icon={isLike === false ? farHeart : faHeart} />
+          <p className="like-count">{userId?.like}</p>
         </button>
       </div>
-      <form onSubmit={onCommentSubmit}>
+      <form className="comments" onSubmit={onCommentSubmit}>
         <input
+          className="comment-input"
           name="comment"
           type="text"
-          placeholder="comment"
+          placeholder="댓글을 남겨주세요."
           onChange={onCommentChange}
           value={commentsValue}
         />
-        <input type="submit" value="Comment" />
+        <input className="comment-btn" type="submit" value="Comment" />
       </form>
-
-      <div>{userId?.styleComments}</div>
+      <div className="comment-list-box">
+        <p className="comment-list-length">{`댓글 ${
+          userCommentLength === undefined ? 0 : userCommentLength
+        }`}</p>
+        {userId?.styleComments?.map((comment) => {
+          return (
+            <div key={comment} className="comment-list">
+              {comment}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
