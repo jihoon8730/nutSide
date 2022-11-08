@@ -3,6 +3,7 @@ import Logout from "./Logout";
 import My from "./My";
 import { useNavigate } from "react-router-dom";
 import Users from "./Users";
+import CreateStyle from "./CreateStyle";
 
 export default function Navbar() {
   const goHome = useNavigate();
@@ -14,7 +15,10 @@ export default function Navbar() {
       <div className="logo" onClick={goToHome}>
         NuT
       </div>
-      <Users />
+      <div className="user">
+        <Users />
+        <CreateStyle />
+      </div>
       <div className="profile">
         <My />
         <Logout />
