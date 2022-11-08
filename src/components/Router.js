@@ -10,6 +10,7 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
 import "normalize.css";
+import "./router.scss";
 
 const AppRouter = ({ isLoggedIn, userObj }) => {
   const [userStyle, setUserStyle] = useState([]);
