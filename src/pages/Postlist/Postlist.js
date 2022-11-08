@@ -4,8 +4,7 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./postlist.scss";
 
-const Postlist = ({ userObj, userStyle, setUserStyle }) => {
-  console.log(userObj.uid);
+const Postlist = ({ userStyle, setUserStyle }) => {
   const goToDetail = useNavigate();
 
   const onLikeTopSort = async () => {
@@ -20,9 +19,13 @@ const Postlist = ({ userObj, userStyle, setUserStyle }) => {
   };
 
   return (
-    <>
-      <button onClick={onLikeTopSort}>top</button>
-      <div className="Postlist">
+    <div className="Postlist">
+      <div className="like-rank">
+        <button className="like-rank-btn" onClick={onLikeTopSort}>
+          좋아요순
+        </button>
+      </div>
+      <div className="postlist-box">
         {userStyle.map((styleInfo) => {
           return (
             <div
@@ -44,7 +47,7 @@ const Postlist = ({ userObj, userStyle, setUserStyle }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

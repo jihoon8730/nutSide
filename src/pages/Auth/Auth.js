@@ -6,11 +6,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import "./auth.scss";
-library.add(fab);
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -119,7 +115,7 @@ const Auth = () => {
           name="google"
           onClick={onSocialLoginClick}
         >
-          <FontAwesomeIcon className="google-font" icon={["fab", "google"]} />
+          G
         </button>
       </div>
     </div>

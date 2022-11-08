@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
-import { db } from "../../firebase";
+import React from "react";
 import StyleEdit from "../../components/StyleEdit";
+import "./mylist.scss";
 
 const Mylist = ({ userObj, userStyle, setUserStyle }) => {
   return (
-    <div>
+    <div className="Mylist">
       {userStyle.map((styleInfo) => {
         return (
           <StyleEdit
