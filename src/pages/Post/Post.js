@@ -114,8 +114,8 @@ const Post = ({ userObj }) => {
               name="sns"
               value={addUserSns}
               type="text"
-              placeholder="SNS 계정"
-              maxLength={30}
+              placeholder="SNS닉네임 (필수)"
+              maxLength={15}
               onChange={onPostChange}
             />
             <input
@@ -123,8 +123,8 @@ const Post = ({ userObj }) => {
               name="top"
               value={addUserTopInfo}
               type="text"
-              placeholder="Top"
-              maxLength={30}
+              placeholder="상의 or 없음"
+              maxLength={15}
               onChange={onPostChange}
             />
             <input
@@ -132,8 +132,8 @@ const Post = ({ userObj }) => {
               name="bottom"
               value={addUserBottomInfo}
               type="text"
-              placeholder="Bottom"
-              maxLength={30}
+              placeholder="하의 or 없음"
+              maxLength={15}
               onChange={onPostChange}
             />
             <input
@@ -141,8 +141,8 @@ const Post = ({ userObj }) => {
               name="outer"
               value={addUserOuter}
               type="text"
-              placeholder="Outer"
-              maxLength={30}
+              placeholder="아우터 or 없음"
+              maxLength={15}
               onChange={onPostChange}
             />
             <input
@@ -150,7 +150,7 @@ const Post = ({ userObj }) => {
               name="comment"
               value={addUserComment}
               type="text"
-              placeholder="Comment"
+              placeholder="소개 코멘트 or 없음"
               maxLength={120}
               onChange={onPostChange}
             />
