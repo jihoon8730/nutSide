@@ -1,34 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 
 .Postlist {
-  display: flex;
-  justify-content: flex-start;
-  gap: 15px;
-  flex-wrap: wrap;
-  width: 1050px;
-  height: auto;
-  margin: 0px auto;
-  margin-top: 50px;
+  width: 100%;
 
-  .cards {
-    position: relative;
-    cursor: pointer;
+  .like-rank {
+    width: 1050px;
+    height: auto;
+    margin: 0px auto;
+    text-align: center;
 
-    .card-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Merriweather', serif;
-      font-size: 25px;
-      opacity: 0.8;
-      color: #FFFFFF;
+    .like-rank-btn {
+      margin-top: 30px;
+      border: 0px;
+      font-size: 20px;
+      background-color: transparent;
     }
-    
-    .card-image {
-      width: 250px;
+
+    .like-rank-btn:hover {
+      cursor: pointer;
+      border-bottom: 1px solid rgb(68, 68, 68);
+    }
+  }
+  
+  .postlist-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 1050px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 30px;
+  
+    .cards {
+      position: relative;
       height: 300px;
-      object-fit: cover;
+      cursor: pointer;
+      
+  
+      .card-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Merriweather', serif;
+        font-size: 25px;
+        opacity: 0.8;
+        color: #FFFFFF;
+      }
+      
+      .card-image {
+        width: 250px;
+        height: 300px;
+        object-fit: cover;
+      }
     }
   }
 }
+
+

@@ -1,0 +1,32 @@
+  .cards {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    background-color: azure;
+
+    .card-image {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+    }
+  
+    .card-black {
+      position: absolute;
+      width: 250px;
+      height: 300px;
+      opacity: 0.5;
+      background-color: black;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 0px;
+      background-color: transparent;
+      color: #eeeeee;
+      font-size: 40px;
+      cursor: pointer;
+    }
+  }

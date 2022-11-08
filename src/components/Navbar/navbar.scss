@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1050px;
+  width: 100vw;
   height: 70px;
   margin: 0px auto;
   margin-top: 50px;
@@ -14,15 +14,22 @@
   .logo {
     width: 100px;
     height: auto;
+    padding-left: 50px;
     font-family: $fontType-merriweather;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     cursor: pointer;
+  }
+
+  .user {
+    display: flex;
+    gap: 40px;
   }
 
   .profile {
     display: flex;
     gap: 20px;
+    padding-right: 50px;
   }
 }
 

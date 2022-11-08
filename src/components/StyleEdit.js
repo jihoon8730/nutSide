@@ -2,6 +2,7 @@ import React from "react";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { deleteObject, ref } from "firebase/storage";
+import "./styleEdit.scss";
 
 const StyleEdit = ({ myStyleObj, isOwner }) => {
   const onDeleteClick = () => {
@@ -14,23 +15,19 @@ const StyleEdit = ({ myStyleObj, isOwner }) => {
     }
   };
   return (
-    <div>
+    <div className="mylists">
       {isOwner === myStyleObj.createId ? (
-        <>
-          <div>{myStyleObj.sns}</div>
-          <div>{myStyleObj.comment}</div>
-          <div>{myStyleObj.outer}</div>
-          <div>{myStyleObj.top}</div>
-          <div>{myStyleObj.bottom}</div>
+        <div className="cards">
+          <div className="card-black"></div>
+          <button className="delete-btn" onClick={onDeleteClick}>
+            X
+          </button>
           <img
+            className="card-image"
             src={myStyleObj.imageUrl}
             alt="image load fail..."
-            width="200px"
-            height="300px"
           ></img>
-          <button onClick={onDeleteClick}>Delete</button>
-          <button>Edit</button>
-        </>
+        </div>
       ) : null}
     </div>
   );

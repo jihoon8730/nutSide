@@ -1,15 +1,35 @@
+@import '/src/styles/basic.scss';
+
 .Detail {
   width: 1050px;
   height: auto;
   margin: 0px auto;
-  margin-top: 50px;
+  padding-top: 100px;
+  background-color: #eeeeee;
+
+  .detail-title {
+    font-size: 60px;
+    font-family: $fontType-merriweather;
+    text-align: center;
+  }
+
+  .detail-comment {
+    width: 400px;
+    height: auto;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    font-size: 17px;
+    font-family: $fontType-merriweather;
+    
+    text-align: center;
+  }
 
   .detail-view {
     position: relative;
     width: 500px;
     height: auto;
     margin: 0px auto;
-    background-color: rgb(68, 68, 68);
+    background-color: rgb(37, 37, 37);
 
     .detail-image {
       width: 100%;
@@ -20,16 +40,18 @@
   .detail-contents {
     height: auto;
     padding: 10px 10px 10px 15px;
-    background-color: rgb(68, 68, 68);
+    background-color: rgb(37, 37, 37);
     color: #eeeeee;
+    font-size: 20px;
   }
+
   .like-btn {
     display: flex;
     align-items: center;
     gap: 15px;
     position: absolute;
-    bottom: 17%;
-    right: 5%;
+    top: 2%;
+    left: 5%;
     border: 0px;
     color: #eeeeee;
     background-color: transparent;
@@ -40,4 +62,48 @@
       font-size: 25px;
     }
   }
+
+  .comments {
+    width: 800px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .comment-input {
+    width: 800px;
+    outline: none;
+    margin-top: 20px;
+    border: 0px;
+    border-bottom: 2px solid rgb(68, 68, 68);
+    background-color: transparent;
+    font-size: 25px;
+  }
+
+  .comment-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: 0px;
+    color: #eeeeee;
+    background-color: rgb(68, 68, 68);
+    cursor: pointer;
+  }
+
+  .comment-list-box {
+    width: 800px;
+    margin: 0px auto;
+    height: auto;
+    padding: 0px 20px;
+    border: 1px solid rgb(201, 201, 201);
+
+    .comment-list-length {
+      font-size: 20px;
+    }
+
+    .comment-list {
+      margin: 20px 0px;
+      color: rgb(68, 68, 68);
+    }
+  }
+
+  
 }

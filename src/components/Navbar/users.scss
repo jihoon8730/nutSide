@@ -1,0 +1,12 @@
+@import '/src/styles/basic.scss';
+
+.Users {
+  height: 30px;
+  font-family: $fontType-merriweather;
+  font-size: $fontSize-20;
+  cursor: pointer;
+}
+
+.Users:hover {
+  border-bottom: 2px solid rgb(68,68,68,);
+}
