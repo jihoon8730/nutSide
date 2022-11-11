@@ -29,19 +29,17 @@ const Postlist = ({ userStyle, setUserStyle }) => {
         {userStyle.map((styleInfo) => {
           return (
             <div
-              className="cards"
+              className="postlist-cards"
               key={styleInfo.id}
               onClick={() => {
                 goToDetail(`/detail/${styleInfo.id}`);
               }}
             >
-              <div className="card-title">{styleInfo.sns}</div>
+              <div className="postlist-title">{styleInfo.sns}</div>
               <img
-                className="card-image"
+                className="postlist-image"
                 src={styleInfo.imageUrl}
                 alt="image load fail..."
-                width="200px"
-                height="300px"
               ></img>
             </div>
           );

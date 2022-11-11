@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { updateDoc, doc, arrayUnion, arrayRemove } from "firebase/firestore";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { db } from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -43,13 +43,7 @@ const Detail = ({ userObj, userStyle }) => {
     }
   };
 
-  const onCommentSubmit = (event) => {
-    event.preventDefault();
-    updateDoc(userStyleDoc, {
-      styleComments: arrayUnion(commentsValue),
-    });
-    setCommentsValue("");
-  };
+  console.log(userObj.uid);
 
   const onCommentChange = async (event) => {
     const {
@@ -60,11 +54,34 @@ const Detail = ({ userObj, userStyle }) => {
     }
   };
 
+  const onCommentSubmit = (event) => {
+    event.preventDefault();
+    updateDoc(userStyleDoc, {
+      styleComments: arrayUnion({
+        userName: userObj.uid,
+        comment: commentsValue,
+      }),
+    });
+    setCommentsValue("");
+  };
+
+  const onCommentDelete = () => {
+    updateDoc(userStyleDoc, {
+      // styleComments: {},
+    });
+  };
+
   const userCommentLength = userId?.styleComments?.length;
 
   return (
     <div className="Detail">
-      <p className="detail-title">{userId?.sns}</p>
+      <a
+        className="detail-title-a"
+        href={`https://www.instagram.com/${userId?.sns}/`}
+        target="_blank"
+      >
+        <p className="detail-title">{userId?.sns}</p>
+      </a>
       <div className="detail-comment">{userId?.comment}</div>
       <div key={userId} className="detail-view">
         <img
@@ -99,10 +116,17 @@ const Detail = ({ userObj, userStyle }) => {
         <p className="comment-list-length">{`댓글 ${
           userCommentLength === undefined ? 0 : userCommentLength
         }`}</p>
-        {userId?.styleComments?.map((comment) => {
+        {userId?.styleComments?.map((comments) => {
           return (
-            <div key={comment} className="comment-list">
-              {comment}
+            <div className="comment-view-box">
+              <div key={comments} className="comment-list">
+                {comments.comment}
+              </div>
+              {comments.userName === userObj.uid ? (
+                <div className="comment-delete-btn" onClick={onCommentDelete}>
+                  X
+                </div>
+              ) : null}
             </div>
           );
         })}

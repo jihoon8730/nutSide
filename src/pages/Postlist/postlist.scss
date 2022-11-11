@@ -4,7 +4,6 @@
   width: 100%;
 
   .like-rank {
-    width: 1050px;
     height: auto;
     margin: 0px auto;
     text-align: center;
@@ -21,7 +20,7 @@
       border-bottom: 1px solid rgb(68, 68, 68);
     }
   }
-  
+
   .postlist-box {
     display: flex;
     justify-content: flex-start;
@@ -30,14 +29,13 @@
     height: auto;
     margin: 0px auto;
     margin-top: 30px;
-  
-    .cards {
+
+    .postlist-cards {
       position: relative;
       height: 300px;
       cursor: pointer;
-      
-  
-      .card-title {
+
+      .postlist-title {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -47,11 +45,34 @@
         opacity: 0.8;
         color: #FFFFFF;
       }
-      
-      .card-image {
+
+      .postlist-image {
         width: 250px;
         height: 300px;
         object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .Postlist {
+    .postlist-box {
+      width: 100vw;
+      display: flex;
+      flex-direction:row;
+  
+      .postlist-cards {
+        width: 50vw;
+        
+        .postlist-title {
+          top: 50%;
+          left: 50%;
+        }
+
+        .postlist-image {
+          width: 50vw;
+        }
       }
     }
   }

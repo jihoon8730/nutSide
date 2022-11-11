@@ -144,7 +144,7 @@
               color: $fontColor-white;
             }
           }
-          
+
           .title-box:hover {
             opacity: 1;
             transition: all 1s;
@@ -185,7 +185,7 @@
               font-family: $fontType-merriweather;
               font-size: $fontSize-20;
             }
-  
+
             .bottom-social-title {
               position: absolute;
               bottom: 2%;
@@ -200,8 +200,6 @@
               transition: all 1s;
             }
           }
-
-          
         }
 
         .title-bottom-right {
@@ -220,6 +218,7 @@
 @media (max-width: 450px) {
   .home {
     width: 100vw;
+    margin-top: 0px;
 
     .main-box {
       width: 100vw;
@@ -228,6 +227,11 @@
 
       .main-left {
         width: 100vw;
+
+        .title-box {
+          width: 100vw;
+          height: 100%;
+        }
 
         .social-title {
           left: 50%;
@@ -238,46 +242,52 @@
         width: 100vw;
 
         .images-top {
-  
           .image-top-box-left {
-  
             .image-top-left {
               width: 50vw;
             }
-  
-            .top-left-social-title {
-              left: 50%;
-              font-size: $fontSize-15;
+
+            .title-box {
+              width: 50vw;
+
+              .top-left-social-title {
+                display: none;
+              }
             }
           }
           
           .image-top-box-right {
-  
             .image-top-right {
               width: 50vw;
             }
-  
-            .top-right-social-title {
-              left: 50%;
-              font-size: $fontSize-15;
+
+            .title-box {
+              width: 50vw;
+
+              .top-right-social-title {
+                display: none;
+              }
             }
           }
         }
 
         .images-bottom {
-  
           .image-bottom-box {
-  
             .image-bottom-left {
               width: 50vw;
               height: 300px;
             }
-  
-            .bottom-social-title {
-              font-size: $fontSize-15;
+
+            .title-box {
+              width: 50vw;
+              height: auto;
+              .bottom-social-title {
+                display: none;
+              }
             }
+            
           }
-  
+
           .title-bottom-right {
             padding-right: 20px;
             font-size: 50px;

@@ -35,14 +35,25 @@
 
 @media (max-width: 450px) {
   .navbar {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
-    margin: 0px;
-    height: 50px;
+    height: 70px;
+    margin-top: 0px;
     background-color: #D9D9D9;
 
     .logo {
       font-size: 30px;
       margin: 0px auto;
+      margin-left: -20px;
+    }
+
+    .user {
+      margin-top: 10px;
+    }
+
+    .profile {
+      display: none;
     }
   }
 }

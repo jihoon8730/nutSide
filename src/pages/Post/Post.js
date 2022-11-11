@@ -15,6 +15,7 @@ const Post = ({ userObj }) => {
   const [addUserOuter, setAddUserOuter] = useState("");
   const [addUserLike, setAddUserLike] = useState(0);
   const [addUserLikeList, setAddUserLikeList] = useState([]);
+  const [addUserStyleComments, setAddUserStyleComments] = useState([]);
   // const [addUserRanking, setAddUserRanking] = useState();
 
   const [attachment, setAttachment] = useState("");
@@ -63,10 +64,11 @@ const Post = ({ userObj }) => {
       imageUrl: imageFileUrl,
       like: addUserLike,
       likelist: addUserLikeList,
+      styleComments: addUserStyleComments,
       // ranking: addUserRanking,
     };
     if (addUserSns === "") {
-      alert("SNS계정을 입력해주세요.");
+      alert("인스타그램 계정을 입력해주세요.");
     } else {
       try {
         const addStyleDatabasePush = await addDoc(
@@ -114,7 +116,7 @@ const Post = ({ userObj }) => {
               name="sns"
               value={addUserSns}
               type="text"
-              placeholder="SNS닉네임 (필수)"
+              placeholder="인스타그램 계정 (필수)"
               maxLength={15}
               onChange={onPostChange}
             />
@@ -151,7 +153,7 @@ const Post = ({ userObj }) => {
               value={addUserComment}
               type="text"
               placeholder="소개 코멘트 or 없음"
-              maxLength={120}
+              maxLength={50}
               onChange={onPostChange}
             />
           </div>
