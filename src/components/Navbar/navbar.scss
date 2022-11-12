@@ -28,8 +28,14 @@
 
   .profile {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding-right: 50px;
+
+    .profileName {
+      padding-top: 15px;
+    }
   }
 }
 

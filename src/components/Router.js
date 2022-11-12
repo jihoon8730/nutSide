@@ -27,7 +27,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
   }, []);
   return (
     <div className="wrap">
-      {isLoggedIn ? <Navbar /> : null}
+      {isLoggedIn ? <Navbar userObj={userObj} /> : null}
       <Routes>
         {isLoggedIn ? (
           <Route path="/" element={<Home />} />
