@@ -4,13 +4,15 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  updateProfile,
 } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./auth.scss";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [createDisplayName, setCreateDisplayName] = useState("");
   const [newAccount, setNewAccount] = useState(false);
   const [displayError, setDisplayError] = useState("");
 
@@ -25,6 +27,8 @@ const Auth = () => {
       setEmail(value);
     } else if (name === "password") {
       setPassword(value);
+    } else if (name === "displayname") {
+      setCreateDisplayName(value);
     }
   };
 
@@ -48,6 +52,13 @@ const Auth = () => {
         .catch((error) => {
           setDisplayError(error.message);
         });
+    }
+    if (auth.currentUser.displayName === null) {
+      updateProfile(auth.currentUser, {
+        displayName: createDisplayName,
+      });
+    } else {
+      return false;
     }
   };
   const toggleAccount = () => setNewAccount((prev) => !prev);
@@ -97,6 +108,20 @@ const Auth = () => {
             onChange={onChangeInputValue}
           />
         </div>
+        <div>
+          <input
+            className={
+              newAccount ? "displayname-input" : "displayname-input-none"
+            }
+            name="displayname"
+            type="displayname"
+            placeholder="Nickname"
+            required
+            value={createDisplayName}
+            onChange={onChangeInputValue}
+            disabled={newAccount ? false : true}
+          />
+        </div>
 
         <input
           className="toggle-sign-btn"
@@ -105,7 +130,6 @@ const Auth = () => {
         />
       </form>
 
-      <div>{displayError}</div>
       <span className="toggle-sign-btn" onClick={toggleAccount}>
         {newAccount ? "Log In" : "Create User"}
       </span>

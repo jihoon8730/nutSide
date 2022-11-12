@@ -2,7 +2,7 @@
 
 .Auth {
   width: 400px;
-  height: 400px;
+  height: 470px;
   margin: 0px auto;
   margin-top: 20vh;
   background-color: rgb(239, 239, 239);
@@ -36,6 +36,21 @@
     font-size: 20px;
     background-color: transparent;
   }
+
+  .displayname-input {
+    width: 250px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    background-color: transparent;
+  }
+
+  .displayname-input-none {
+    display: none;
+  }
+
   .password-input:focus {
     outline: none;
   }
