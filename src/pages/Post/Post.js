@@ -116,7 +116,7 @@ const Post = ({ userObj }) => {
               name="sns"
               value={addUserSns}
               type="text"
-              placeholder="인스타그램 계정 (필수)"
+              placeholder="인스타그램 닉네임 (필수)"
               maxLength={15}
               onChange={onPostChange}
             />
@@ -152,18 +152,18 @@ const Post = ({ userObj }) => {
               name="comment"
               value={addUserComment}
               type="text"
-              placeholder="소개 코멘트 or 없음"
+              placeholder="간단한 소개"
               maxLength={50}
               onChange={onPostChange}
             />
           </div>
 
-          <input className="Add-btn" type="submit" value="Add" />
+          <input className="Add-btn" type="submit" value="등록" />
           <div className="post-form-right">
             {attachment ? null : (
               <>
                 <label className="post-image-input" for="input-file">
-                  PHOTO
+                  사진업로드
                 </label>
                 <input
                   type="file"
@@ -179,7 +179,7 @@ const Post = ({ userObj }) => {
               <div>
                 <img src={attachment} className="post-image" />
                 <button className="clear-btn" onClick={onClearPhotoClick}>
-                  Clear
+                  취소
                 </button>
               </div>
             )}

@@ -9,7 +9,7 @@ const CreateStyle = () => {
   };
   return (
     <div className="CreateStyle" onClick={goToCreateStyle}>
-      CreateStyle
+      스타일 등록하기
     </div>
   );
 };

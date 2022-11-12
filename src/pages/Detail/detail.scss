@@ -113,8 +113,16 @@
       align-items: center;
 
       .comment-list {
-        margin: 20px 0px;
+        margin: 10px 0px;
         color: rgb(68, 68, 68);
+
+        .comment-list-nickname {
+          color: rgb(133, 133, 133);
+        }
+
+        .comment-list-maker {
+          color: rgb(254, 55, 55);
+        }
       }
     }
     
@@ -126,12 +134,14 @@
     width: 100vw;
     padding-top: 50px;
 
-    .detail-title {
-      width: 90vw;
-      margin: 0px auto;
-      font-size: 50px;
+    .detail-title-a {
+      .detail-title {
+        width: 90vw;
+        margin: 0px auto;
+        font-size: 50px;
+      }
     }
-
+    
     .detail-comment {
       width: 90vw;
     }

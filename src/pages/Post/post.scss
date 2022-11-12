@@ -60,7 +60,7 @@
       .post-image-input {
         position: absolute;
         top: 220px;
-        left: 155px;
+        left: 145px;
         padding: 10px 20px;
         background-color: rgb(68, 68, 68);
         color: #eeeeee;
@@ -95,7 +95,7 @@
   .Post {
     width: 100vw;
     height: auto;
-    margin-top: 0px;
+    margin-top: 50px;
 
     .post-form-left {
       width: 100vw;
@@ -109,6 +109,7 @@
         top: 65vh;
         width: 90vw;
         margin-top: 30px;
+        padding-bottom: 30px;
 
         .input-style {
           width: 90vw;
@@ -117,7 +118,8 @@
       }
 
       .Add-btn {
-        top: 20px;
+        position: absolute;
+        top: -20px;
       }
       
       .post-form-right {
@@ -127,7 +129,7 @@
         height: 60vh;
 
         .post-image-input {
-          left: 135px;
+          left: 125px;
         }
 
         .post-image {

@@ -9,6 +9,7 @@ import "./detail.scss";
 
 const Detail = ({ userObj, userStyle }) => {
   const [commentsValue, setCommentsValue] = useState([]);
+  console.log(userObj.uid);
 
   let { id } = useParams();
   let userId = userStyle.find((style) => {
@@ -43,8 +44,6 @@ const Detail = ({ userObj, userStyle }) => {
     }
   };
 
-  console.log(userObj.uid);
-
   const onCommentChange = async (event) => {
     const {
       target: { value, name },
@@ -56,23 +55,35 @@ const Detail = ({ userObj, userStyle }) => {
 
   const onCommentSubmit = (event) => {
     event.preventDefault();
-    updateDoc(userStyleDoc, {
-      styleComments: arrayUnion({
-        userName: userObj.uid,
-        comment: commentsValue,
-      }),
-    });
+    if (userObj.uid === userId.createId) {
+      updateDoc(userStyleDoc, {
+        styleComments: arrayUnion({
+          nickName: userObj.displayName,
+          userUid: userObj.uid,
+          comment: commentsValue,
+          maker: "작성자",
+        }),
+      });
+    } else {
+      updateDoc(userStyleDoc, {
+        styleComments: arrayUnion({
+          nickName: userObj.displayName,
+          userUid: userObj.uid,
+          comment: commentsValue,
+        }),
+      });
+    }
     setCommentsValue("");
   };
 
-  const onCommentDelete = () => {
-    updateDoc(userStyleDoc, {
-      // styleComments: {},
-    });
-  };
+  // const onCommentDelete = () => {
+  //   updateDoc(userStyleDoc, {
+  //     styleComments: {},
+  //   });
+  // };
 
   const userCommentLength = userId?.styleComments?.length;
-
+  console.log(userObj);
   return (
     <div className="Detail">
       <a
@@ -117,16 +128,24 @@ const Detail = ({ userObj, userStyle }) => {
           userCommentLength === undefined ? 0 : userCommentLength
         }`}</p>
         {userId?.styleComments?.map((comments) => {
+          console.log(userId.createId);
           return (
             <div className="comment-view-box">
               <div key={comments} className="comment-list">
+                <span className="comment-list-nickname">
+                  {`${comments.nickName} : `}
+                </span>
                 {comments.comment}
+                <span className="comment-list-maker">
+                  {"  "}
+                  {` ${comments.maker}`}
+                </span>
               </div>
-              {comments.userName === userObj.uid ? (
+              {/* {comments.userName === userObj.uid ? (
                 <div className="comment-delete-btn" onClick={onCommentDelete}>
                   X
                 </div>
-              ) : null}
+              ) : null} */}
             </div>
           );
         })}
