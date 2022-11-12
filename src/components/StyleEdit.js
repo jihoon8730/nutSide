@@ -2,6 +2,7 @@ import React from "react";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { deleteObject, ref } from "firebase/storage";
+import { useNavigate } from "react-router-dom";
 import "./styleEdit.scss";
 
 const StyleEdit = ({ myStyleObj, isOwner }) => {
@@ -14,11 +15,22 @@ const StyleEdit = ({ myStyleObj, isOwner }) => {
       deleteObject(imageFileUrl);
     }
   };
+
+  const goToDetail = useNavigate();
+
   return (
     <div className="mylists">
       {isOwner === myStyleObj.createId ? (
         <div className="cards">
           <div className="card-black"></div>
+          <button
+            className="detail-page-btn"
+            onClick={() => {
+              goToDetail(`/detail/${myStyleObj.id}`);
+            }}
+          >
+            P
+          </button>
           <button className="delete-btn" onClick={onDeleteClick}>
             X
           </button>
