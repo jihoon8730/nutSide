@@ -28,7 +28,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <div className="wrap">
       {isLoggedIn ? <Navbar userObj={userObj} /> : null}
-      <Routes>
+      <Routes basename={process.env.PUBLIC_URL}>
         {isLoggedIn ? (
           <Route path="/" element={<Home />} />
         ) : (
