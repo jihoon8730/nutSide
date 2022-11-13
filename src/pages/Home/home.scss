@@ -30,7 +30,7 @@
         top: 0px;
         width: 500px;
         height: 600px;
-        opacity: 1;
+        opacity: 0;
         transition: all 1s;
 
         .numbering-title {
@@ -81,7 +81,7 @@
             top: 0px;
             width: 275px;
             height: 300px;
-            opacity: 1;
+            opacity: 0;
             transition: all 1s;
 
             .top-left-numbering-title {
@@ -123,7 +123,7 @@
             top: 0px;
             width: 275px;
             height: 300px;
-            opacity: 1;
+            opacity: 0;
             transition: all 1s;
 
             .top-right-numbering-title {
@@ -174,7 +174,7 @@
             top: 0px;
             width: 260px;
             height: 285px;
-            opacity: 1;
+            opacity: 0;
             transition: all 1s;
 
             .bottom-numbering-title {
@@ -194,11 +194,11 @@
               font-family: $fontType-merriweather;
               font-size: $fontSize-20;
             }
-
-            .title-box:hover {
-              opacity: 1;
-              transition: all 1s;
-            }
+          }
+          
+          .title-box:hover {
+            opacity: 1;
+            transition: all 1s;
           }
         }
 
@@ -280,15 +280,13 @@
               width: 50vw;
               height: 300px;
             }
-
-            .title-box {
-              width: 50vw;
-              height: auto;
-              .bottom-social-title {
-                display: none;
-              }
+          }
+          .title-box {
+            width: 50vw;
+            height: auto;
+            .bottom-social-title {
+              display: none;
             }
-            
           }
 
           .title-bottom-right {
