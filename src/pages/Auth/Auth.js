@@ -115,7 +115,7 @@ const Auth = () => {
             }
             name="displayname"
             type="displayname"
-            placeholder="Nickname"
+            placeholder="Name"
             required
             value={createDisplayName}
             onChange={onChangeInputValue}
