@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { updateDoc, doc, arrayUnion, arrayRemove } from "firebase/firestore";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { db } from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,6 @@ import "./detail.scss";
 
 const Detail = ({ userObj, userStyle }) => {
   const [commentsValue, setCommentsValue] = useState([]);
-  console.log(userObj.uid);
 
   let { id } = useParams();
   let userId = userStyle.find((style) => {
@@ -83,7 +82,7 @@ const Detail = ({ userObj, userStyle }) => {
   // };
 
   const userCommentLength = userId?.styleComments?.length;
-  console.log(userObj);
+
   return (
     <div className="Detail">
       <a
@@ -128,7 +127,6 @@ const Detail = ({ userObj, userStyle }) => {
           userCommentLength === undefined ? 0 : userCommentLength
         }`}</p>
         {userId?.styleComments?.map((comments) => {
-          console.log(userId.createId);
           return (
             <div className="comment-view-box">
               <div key={comments} className="comment-list">
@@ -136,10 +134,7 @@ const Detail = ({ userObj, userStyle }) => {
                   {`${comments.nickName} : `}
                 </span>
                 {comments.comment}
-                <span className="comment-list-maker">
-                  {"  "}
-                  {` ${comments.maker}`}
-                </span>
+                <span className="comment-list-maker"> {comments?.maker}</span>
               </div>
               {/* {comments.userName === userObj.uid ? (
                 <div className="comment-delete-btn" onClick={onCommentDelete}>

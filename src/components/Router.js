@@ -14,7 +14,7 @@ import "./router.scss";
 
 const AppRouter = ({ isLoggedIn, userObj }) => {
   const [userStyle, setUserStyle] = useState([]);
-  console.log(userStyle);
+
   useEffect(() => {
     const q = query(collection(db, "nutside"), orderBy("createAt", "desc"));
     onSnapshot(q, (snapshot) => {
