@@ -6,6 +6,9 @@
   width: 100%;
 
   .like-rank {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     height: auto;
     margin: 0px auto;
     text-align: center;
@@ -21,6 +24,21 @@
     }
 
     .like-rank-btn:hover {
+      cursor: pointer;
+      border-bottom: 1px solid rgb(68, 68, 68);
+    }
+    
+    .create-rank-btn {
+      margin-top: 30px;
+      padding: 5px 15px;
+      border: 1px solid rgb(68, 68, 68);
+      font-size: 20px;
+      background-color: rgb(68, 68, 68);
+      color: #eeeeee;
+      font-family: $fontType-notoSansKorean;
+    }
+
+    .create-rank-btn:hover {
       cursor: pointer;
       border-bottom: 1px solid rgb(68, 68, 68);
     }
@@ -47,8 +65,16 @@
         transform: translate(-50%, -50%);
         font-family: 'Merriweather', serif;
         font-size: 25px;
+        text-align: center;
         opacity: 0.8;
         color: #FFFFFF;
+
+        .title-like {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+        }
       }
 
       .postlist-image {
