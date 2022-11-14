@@ -1,4 +1,5 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { authService } from "../../../firebase";
 import React, { useState } from "react";
 import "./signin.scss";
 
@@ -20,8 +21,7 @@ const Signin = () => {
   const onSigninClick = async (e) => {
     e.preventDefault();
     let data;
-    const auth = getAuth();
-    data = await signInWithEmailAndPassword(auth, email, password);
+    data = await signInWithEmailAndPassword(authService, email, password);
     console.log(data);
     alert("로그인 하였습니다.");
   };

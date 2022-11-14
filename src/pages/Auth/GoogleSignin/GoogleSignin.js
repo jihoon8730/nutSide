@@ -1,4 +1,5 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { authService } from "../../../firebase";
 import React from "react";
 import "./googlesignin.scss";
 
@@ -7,10 +8,9 @@ const GoogleSignin = () => {
     const {
       target: { name },
     } = e;
-    const auth = getAuth();
     if (name === "google") {
       const provider = new GoogleAuthProvider();
-      signInWithPopup(auth, provider)
+      signInWithPopup(authService, provider)
         .then((result) => {
           const user = result.user;
           console.log(user);

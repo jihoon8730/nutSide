@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
   updateProfile,
 } from "firebase/auth";
+import { authService } from "../../../firebase";
 import "./signup.scss";
 
 const Signup = () => {
@@ -36,7 +35,7 @@ const Signup = () => {
     if (password === passwordChecked) {
       let data;
       const auth = getAuth();
-      data = await createUserWithEmailAndPassword(auth, email, password);
+      data = await createUserWithEmailAndPassword(authService, email, password);
       updateProfile(auth.currentUser, {
         displayName: createDisplayName,
       });
