@@ -1,0 +1,30 @@
+@import '/src/styles/basic.scss';
+
+.email-input {
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.email-input:focus {
+  outline: none;
+}
+
+.password-input {
+  width: 250px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.login-btn {
+  margin: 10px;
+  border: none;
+  font-family: $fontType-notoSansKorean;
+  cursor: pointer;
+}

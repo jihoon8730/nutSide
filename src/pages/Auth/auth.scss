@@ -15,80 +15,11 @@
     font-family: $fontType-merriweather;
   }
 
-  .email-input {
-    width: 250px;
-    border: none;
-    border-bottom: 1px solid gray;
-    font-size: 20px;
-    background-color: transparent;
-  }
-
-  .email-input:focus {
-    outline: none;
-  }
-
-  .password-input {
-    width: 250px;
-    border: none;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid gray;
-    font-size: 20px;
-    background-color: transparent;
-  }
-
-  .password-input-check {
-    width: 250px;
-    border: none;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid gray;
-    font-size: 20px;
-    background-color: transparent;
-  }
-
-  .password-input-check-none {
-    display: none;
-  }
-
-  .password-input-check-message {
-    color: rgb(249, 35, 35);
-  }
-
-  .displayname-input {
-    width: 250px;
-    border: none;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid gray;
-    font-size: 20px;
-    background-color: transparent;
-  }
-  
-
-  .displayname-input-none {
-    display: none;
-  }
-
-  .password-input:focus {
-    outline: none;
-  }
-
-  .toggle-sign-btn {
-    margin: 10px;
-    border: none;
+  .create-id-btn {
+    border: 2px solid #4f4f4f;
+    margin-bottom: 20px;
+    padding: 5px 10px;
     font-family: $fontType-notoSansKorean;
-    cursor: pointer;
-  }
-
-  .google-btn {
-    font-family: $fontType-merriweather;
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    margin-top: 20px;
-    cursor: pointer;
   }
 }
 
