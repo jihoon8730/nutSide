@@ -119,7 +119,7 @@
 
       .Add-btn {
         position: absolute;
-        top: -20px;
+        top: -8%
       }
       
       .post-form-right {
@@ -129,7 +129,9 @@
         height: 60vh;
 
         .post-image-input {
-          left: 125px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
         }
 
         .post-image {

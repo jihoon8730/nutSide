@@ -85,7 +85,7 @@ const Post = ({ userObj }) => {
       } catch (e) {
         console.error("Error adding document: ", e);
       }
-      alert("스타일을 등록 했습니다.");
+      window.confirm("스타일을 등록하시겠습니까?");
       goToPostList();
     }
   };
@@ -117,7 +117,7 @@ const Post = ({ userObj }) => {
               name="sns"
               value={addUserSns}
               type="text"
-              placeholder="인스타그램 닉네임 (필수)"
+              placeholder="인스타그램 아이디 (필수)"
               maxLength={15}
               onChange={onPostChange}
             />

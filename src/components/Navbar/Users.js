@@ -9,7 +9,7 @@ const Users = () => {
   };
   return (
     <div className="Users" onClick={goToUsers}>
-      list
+      User list
     </div>
   );
 };

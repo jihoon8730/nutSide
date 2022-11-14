@@ -7,3 +7,10 @@
   margin: 0px auto;
   margin-top: 80px;
 }
+
+@media (max-width: 450px) {
+  .Mylist {
+    width: 100vw;
+    margin-top: 0px;
+  }
+}

@@ -41,3 +41,17 @@
       cursor: pointer;
     }
   }
+
+  @media (max-width: 450px) {
+    .cards {
+      width: 50vw;
+  
+      .card-image {
+        width: 50vw;
+      }
+
+      .card-black {
+        width: 50vw;
+      } 
+    }
+  }

@@ -12,10 +12,12 @@
 
     .like-rank-btn {
       margin-top: 30px;
-      border: 0px;
+      padding: 5px 15px;
+      border: 1px solid rgb(68, 68, 68);
       font-size: 20px;
-      background-color: transparent;
-      font-family: $fontType-nanumMyeongjo;
+      background-color: rgb(68, 68, 68);
+      color: #eeeeee;
+      font-family: $fontType-notoSansKorean;
     }
 
     .like-rank-btn:hover {

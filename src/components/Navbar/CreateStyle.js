@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./createstyle.scss";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CreateStyle = () => {
@@ -11,7 +11,7 @@ const CreateStyle = () => {
   };
   return (
     <div className="CreateStyle" onClick={goToCreateStyle}>
-      <FontAwesomeIcon icon={faPlus} />
+      <FontAwesomeIcon icon={faPenToSquare} /> Style
     </div>
   );
 };

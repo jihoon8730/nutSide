@@ -9,7 +9,7 @@ const My = () => {
   };
   return (
     <div className="my-btn" onClick={goToMy}>
-      Mylist
+      My page
     </div>
   );
 };

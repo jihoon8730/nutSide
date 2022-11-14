@@ -22,15 +22,17 @@ export default function Navbar({ userObj }) {
 
   return (
     <nav className="navbar">
-      <div className="logo" onClick={goToHome}>
-        NuT
-      </div>
-      <div className="user">
-        <Users />
-        <CreateStyle />
-      </div>
-      <div className="profile">
+      <div className="top">
+        <div className="logo" onClick={goToHome}>
+          NuT
+        </div>
         <p className="profileName">{profile.displayName} 님</p>
+        <div className="create-style">
+          <CreateStyle />
+        </div>
+      </div>
+      <div className="bottom">
+        <Users />
         <My />
         <Logout />
       </div>

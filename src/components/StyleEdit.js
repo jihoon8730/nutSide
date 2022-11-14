@@ -3,7 +3,12 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { deleteObject, ref } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
+import {
+  faArrowRightToBracket,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 import "./styleEdit.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StyleEdit = ({ myStyleObj, isOwner }) => {
   const onDeleteClick = () => {
@@ -29,10 +34,10 @@ const StyleEdit = ({ myStyleObj, isOwner }) => {
               goToDetail(`/detail/${myStyleObj.id}`);
             }}
           >
-            P
+            <FontAwesomeIcon icon={faArrowRightToBracket} />
           </button>
           <button className="delete-btn" onClick={onDeleteClick}>
-            X
+            <FontAwesomeIcon icon={faTrashCan} />
           </button>
           <img
             className="card-image"

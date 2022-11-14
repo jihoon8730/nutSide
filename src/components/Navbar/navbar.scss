@@ -2,64 +2,77 @@
 @import '/src/styles/basic.scss';
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100vw;
-  height: 70px;
+  height: 100px;
   margin: 0px auto;
-  margin-top: 50px;
   border-bottom: 1px solid gray;
 
-  .logo {
-    width: 100px;
-    height: auto;
-    padding-left: 50px;
-    font-family: $fontType-merriweather;
-    font-size: 40px;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  .user {
+  .top {
+    width: 500px;
     display: flex;
-    gap: 40px;
-  }
-
-  .profile {
-    display: flex;
-    justify-content: center;
+    gap: 30px;
     align-items: center;
-    gap: 20px;
-    padding-right: 50px;
+    padding-top: 20px;
 
+    .logo {
+      width: 150px;
+      height: auto;
+      font-family: $fontType-merriweather;
+      font-size: 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+    
     .profileName {
       padding-top: 15px;
     }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 50px;
+    padding-top: 20px;
   }
 }
 
 @media (max-width: 450px) {
   .navbar {
-    display: flex;
-    flex-direction: column;
     width: 100vw;
-    height: 70px;
-    margin-top: 0px;
-    background-color: #D9D9D9;
+    height: 150px;
+    display: flex;
+    border: 0px;
+    background-color: rgb(184, 184, 184);
 
-    .logo {
-      font-size: 30px;
-      margin: 0px auto;
-      margin-left: -20px;
+    .top {
+      width: 500px;
+      display: flex;
+      gap: 35px;
+      align-items: center;
+      padding: 0px;
+
+      .logo {
+        width: 150px;
+        height: auto;
+        font-family: $fontType-merriweather;
+        font-size: 40px;
+        text-align: center;
+        cursor: pointer;
+      }
+      
+      .profileName {
+        padding-top: 15px;
+        color: rgb(113, 113, 113);
+      }
     }
-
-    .user {
-      margin-top: 10px;
-    }
-
-    .profile {
-      display: none;
+  
+    .bottom {
+      width: 400px;
+      padding: 0px 0px 0px 50px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
     }
   }
 }

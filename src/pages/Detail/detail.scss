@@ -139,7 +139,7 @@
       .detail-title {
         width: 90vw;
         margin: 0px auto;
-        font-size: 50px;
+        font-size: 40px;
       }
     }
     
@@ -149,6 +149,10 @@
 
     .detail-view {
       width: 75vw;
+
+      .detail-contents {
+        font-size: 17px;
+      }
     }
 
     .comments {
