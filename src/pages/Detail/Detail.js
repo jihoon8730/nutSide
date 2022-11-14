@@ -19,17 +19,6 @@ const Detail = ({ userObj, userStyle }) => {
 
   const isLike = userId?.likelist.includes(userObj.uid);
   const onLikeCount = async () => {
-    // array 요소의 추가 제거;
-    // Atomically add a new region to the "regions" array field.
-    // await updateDoc(washingtonRef, {
-    //   regions: arrayUnion("greater_virginia")
-    // });
-
-    // Atomically remove a region from the "regions" array field.
-    // await updateDoc(washingtonRef, {
-    //   regions: arrayRemove("east_coast")
-    // });
-
     if (!isLike) {
       await updateDoc(userStyleDoc, {
         like: userId?.like + 1,
@@ -54,25 +43,29 @@ const Detail = ({ userObj, userStyle }) => {
 
   const onCommentSubmit = (event) => {
     event.preventDefault();
-    if (userObj.uid === userId.createId) {
-      updateDoc(userStyleDoc, {
-        styleComments: arrayUnion({
-          nickName: userObj.displayName,
-          userUid: userObj.uid,
-          comment: commentsValue,
-          maker: "작성자",
-        }),
-      });
+    if (commentsValue !== "") {
+      if (userObj.uid === userId.createId) {
+        updateDoc(userStyleDoc, {
+          styleComments: arrayUnion({
+            nickName: userObj.displayName,
+            userUid: userObj.uid,
+            comment: commentsValue,
+            maker: "작성자",
+          }),
+        });
+      } else {
+        updateDoc(userStyleDoc, {
+          styleComments: arrayUnion({
+            nickName: userObj.displayName,
+            userUid: userObj.uid,
+            comment: commentsValue,
+          }),
+        });
+      }
+      setCommentsValue("");
     } else {
-      updateDoc(userStyleDoc, {
-        styleComments: arrayUnion({
-          nickName: userObj.displayName,
-          userUid: userObj.uid,
-          comment: commentsValue,
-        }),
-      });
+      alert("댓글을 입력해주세요");
     }
-    setCommentsValue("");
   };
 
   // const onCommentDelete = () => {
