@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AppRouter from "./Router";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
+import { authService } from "../firebase";
 import Spinner from "./Spinner";
 import "./App.scss";
 import "normalize.css";
@@ -12,8 +13,7 @@ function App() {
 
   //user login true & false
   useEffect(() => {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(authService, (user) => {
       if (user) {
         setIsLoggedIn(true);
         setUserObj(user);
