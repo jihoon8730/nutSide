@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/nutSide/static/css/main.89b282c0.css",
-    "main.js": "/nutSide/static/js/main.8b69cf95.js",
+    "main.js": "/nutSide/static/js/main.4ebcc592.js",
     "index.html": "/nutSide/index.html",
     "main.89b282c0.css.map": "/nutSide/static/css/main.89b282c0.css.map",
-    "main.8b69cf95.js.map": "/nutSide/static/js/main.8b69cf95.js.map"
+    "main.4ebcc592.js.map": "/nutSide/static/js/main.4ebcc592.js.map"
   },
   "entrypoints": [
     "static/css/main.89b282c0.css",
-    "static/js/main.8b69cf95.js"
+    "static/js/main.4ebcc592.js"
   ]
 }
