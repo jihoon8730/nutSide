@@ -9,7 +9,7 @@ const Users = () => {
   };
   return (
     <div className="Users" onClick={goToUsers}>
-      사람들
+      list
     </div>
   );
 };

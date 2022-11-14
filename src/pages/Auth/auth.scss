@@ -2,7 +2,7 @@
 
 .Auth {
   width: 400px;
-  height: 470px;
+  height: 560px;
   margin: 0px auto;
   margin-top: 20vh;
   background-color: rgb(239, 239, 239);
@@ -37,6 +37,24 @@
     background-color: transparent;
   }
 
+  .password-input-check {
+    width: 250px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    background-color: transparent;
+  }
+
+  .password-input-check-none {
+    display: none;
+  }
+
+  .password-input-check-message {
+    color: rgb(249, 35, 35);
+  }
+
   .displayname-input {
     width: 250px;
     border: none;
@@ -46,6 +64,7 @@
     font-size: 20px;
     background-color: transparent;
   }
+  
 
   .displayname-input-none {
     display: none;
@@ -58,7 +77,7 @@
   .toggle-sign-btn {
     margin: 10px;
     border: none;
-    font-family: $fontType-merriweather;
+    font-family: $fontType-notoSansKorean;
     cursor: pointer;
   }
 
@@ -70,5 +89,11 @@
     border-radius: 50px;
     margin-top: 20px;
     cursor: pointer;
+  }
+}
+
+@media (max-width:450px) {
+  .Auth {
+    width: 100vw;
   }
 }

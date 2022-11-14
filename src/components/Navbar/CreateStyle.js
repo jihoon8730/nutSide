@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./createstyle.scss";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CreateStyle = () => {
   const create = useNavigate();
@@ -9,7 +11,7 @@ const CreateStyle = () => {
   };
   return (
     <div className="CreateStyle" onClick={goToCreateStyle}>
-      스타일 등록하기
+      <FontAwesomeIcon icon={faPlus} />
     </div>
   );
 };

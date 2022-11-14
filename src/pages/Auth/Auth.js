@@ -6,17 +6,18 @@ import {
   GoogleAuthProvider,
   updateProfile,
 } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./auth.scss";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordChecked, setPasswordChecked] = useState("");
   const [createDisplayName, setCreateDisplayName] = useState("");
   const [newAccount, setNewAccount] = useState(false);
   const [displayError, setDisplayError] = useState("");
 
-  const auth = getAuth();
+  const [isPassword, setIsPassword] = useState(false);
 
   // email & password.
   const onChangeInputValue = (event) => {
@@ -29,39 +30,40 @@ const Auth = () => {
       setPassword(value);
     } else if (name === "displayname") {
       setCreateDisplayName(value);
+    } else if (name === "passwordChecked") {
+      setPasswordChecked(value);
     }
   };
 
+  const auth = getAuth();
   const onSubmit = async (event) => {
     event.preventDefault();
-    if (newAccount) {
-      await createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user);
-        })
-        .catch((error) => {
-          setDisplayError(error.message);
-        });
-    } else {
-      await signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user);
-        })
-        .catch((error) => {
-          setDisplayError(error.message);
-        });
+    try {
+      let data;
+      if (newAccount) {
+        if (password === passwordChecked) {
+          data = await createUserWithEmailAndPassword(auth, email, password);
+        }
+      } else {
+        data = await signInWithEmailAndPassword(auth, email, password);
+      }
+      setIsPassword(true);
+      setTimeout(() => {
+        setIsPassword(false);
+      }, 3000);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
     }
     if (auth.currentUser.displayName === null) {
       updateProfile(auth.currentUser, {
         displayName: createDisplayName,
       });
-    } else {
-      return false;
     }
   };
-  const toggleAccount = () => setNewAccount((prev) => !prev);
+  const toggleAccount = () => {
+    setNewAccount((prev) => !prev);
+  };
 
   // google Login
   const onSocialLoginClick = (event) => {
@@ -111,11 +113,29 @@ const Auth = () => {
         <div>
           <input
             className={
+              newAccount ? "password-input-check" : "password-input-check-none"
+            }
+            name="passwordChecked"
+            type="password"
+            placeholder="Password 확인"
+            required
+            value={passwordChecked}
+            onChange={onChangeInputValue}
+          />
+          {isPassword === true ? (
+            <p className="password-input-check-message">
+              비밀번호가 일치하지 않습니다.
+            </p>
+          ) : null}
+        </div>
+        <div>
+          <input
+            className={
               newAccount ? "displayname-input" : "displayname-input-none"
             }
             name="displayname"
             type="displayname"
-            placeholder="Name"
+            placeholder="Nickname"
             required
             value={createDisplayName}
             onChange={onChangeInputValue}
@@ -126,12 +146,12 @@ const Auth = () => {
         <input
           className="toggle-sign-btn"
           type="submit"
-          value={newAccount ? "Create" : "Log In"}
+          value={newAccount ? "생성완료" : "로그인"}
         />
       </form>
 
       <span className="toggle-sign-btn" onClick={toggleAccount}>
-        {newAccount ? "Log In" : "Create User"}
+        {newAccount ? "로그인 돌아가기" : "계정만들기"}
       </span>
       <div>
         <button

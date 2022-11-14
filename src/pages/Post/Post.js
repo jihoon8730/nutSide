@@ -45,7 +45,6 @@ const Post = ({ userObj }) => {
   // add data save
   const onPostSubmit = async (event) => {
     event.preventDefault();
-    alert("스타일을 등록 했습니다.");
 
     // image uploading And imageUrl
     let imageFileUrl = "";
@@ -86,6 +85,7 @@ const Post = ({ userObj }) => {
       } catch (e) {
         console.error("Error adding document: ", e);
       }
+      alert("스타일을 등록 했습니다.");
       goToPostList();
     }
   };
