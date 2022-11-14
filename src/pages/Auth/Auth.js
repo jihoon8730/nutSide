@@ -43,6 +43,9 @@ const Auth = () => {
       if (newAccount) {
         if (password === passwordChecked) {
           data = await createUserWithEmailAndPassword(auth, email, password);
+          updateProfile(auth.currentUser, {
+            displayName: createDisplayName,
+          });
         }
       } else {
         data = await signInWithEmailAndPassword(auth, email, password);
@@ -54,11 +57,6 @@ const Auth = () => {
       console.log(data);
     } catch (error) {
       console.log(error);
-    }
-    if (auth.currentUser.displayName === null) {
-      updateProfile(auth.currentUser, {
-        displayName: createDisplayName,
-      });
     }
   };
   const toggleAccount = () => {
