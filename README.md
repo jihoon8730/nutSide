@@ -1,7 +1,6 @@
 <h1>🧢 [너의트렌드] NuT</h1>
 
 사이트 : https://jihoon8730.github.io/nutSide/
-<img src="https://user-images.githubusercontent.com/88140865/201859216-4a5e8220-0043-40cd-b612-fc831a86e294.png" width="500px" />
 
 <h3>💡 프로젝트 목표</h3>
 
