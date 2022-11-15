@@ -1,4 +1,8 @@
 <h1>🧢 [너의트렌드] NuT</h1>
+
+사이트 : https://jihoon8730.github.io/nutSide/
+<img src="https://user-images.githubusercontent.com/88140865/201859216-4a5e8220-0043-40cd-b612-fc831a86e294.png" width="500px" />
+
 <h3>💡 프로젝트 목표</h3>
 
 <p> - 본인의 스타일 이나 옷 사진을 올리고 자유롭게 의견을 주고 받을 수 있는 게시판</p>
