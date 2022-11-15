@@ -45,7 +45,7 @@
 <img width="1765" alt="스크린샷 2022-11-15 오후 4 32 14" src="https://user-images.githubusercontent.com/88140865/201857597-3ae45f43-d285-4a3b-bccd-f9db28b439b3.png">
 <h3>💡 반응형 </h3>
 <div>
-  <img src="https://user-images.githubusercontent.com/88140865/201858290-1680d4f4-c516-4aab-8c3b-f69fe625d6f8.png" width="300px" />
-  <img src="https://user-images.githubusercontent.com/88140865/201858356-fb956e68-a3dd-4033-9520-5c74789d6638.png" width="300px" />
-  <img src="https://user-images.githubusercontent.com/88140865/201858370-18b80d17-baf5-45ca-bc55-3e97c6fea1e7.png" width="300px" />
+  <img src="https://user-images.githubusercontent.com/88140865/201858290-1680d4f4-c516-4aab-8c3b-f69fe625d6f8.png" width="200px" />
+  <img src="https://user-images.githubusercontent.com/88140865/201858356-fb956e68-a3dd-4033-9520-5c74789d6638.png" width="200px" />
+  <img src="https://user-images.githubusercontent.com/88140865/201858370-18b80d17-baf5-45ca-bc55-3e97c6fea1e7.png" width="200px" />
 </div>
