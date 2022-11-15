@@ -10,15 +10,14 @@
 <p>2022. 11. 02 ~ 2022. 11. 14</p>
 <p>신지훈(jihoon8730)</p>
 
-
 <hr />
 
 <h3>🌈 디자인</h3>
 
 - 디자인 참고<br />
-https://wwit.design/2021/03/31/29cm/ (29CM)<br />
-https://www.pinterest.co.kr/pin/578149670929241788/ (레이아웃 디자인 샘플)<br />
-https://www.pinterest.co.kr/pin/422281201614997/ (레이아웃 디자인 샘플)
+  https://wwit.design/2021/03/31/29cm/ (29CM)<br />
+  https://www.pinterest.co.kr/pin/578149670929241788/ (레이아웃 디자인 샘플)<br />
+  https://www.pinterest.co.kr/pin/422281201614997/ (레이아웃 디자인 샘플)
 
 🌈 Figma(피그마)
 
@@ -26,7 +25,7 @@ https://www.pinterest.co.kr/pin/422281201614997/ (레이아웃 디자인 샘플)
 
 <hr />
 
-<h3>📚 기술</h3>
+<h3>📚 기술 </h3>
 <div>
   <img src="https://img.shields.io/badge/HTML5-red?style=for-the-badge&logo=HTML5&logoColor=white">
   <img src="https://img.shields.io/badge/Sass-pink?style=for-the-badge&logo=Sass&logoColor=white">
@@ -41,5 +40,3 @@ https://www.pinterest.co.kr/pin/422281201614997/ (레이아웃 디자인 샘플)
 - Post (스타일 등록) <br />
 - Postlist (유저 스타일 리스트) <br />
 - Mylist (본인 스타일 리스트)
-
-
