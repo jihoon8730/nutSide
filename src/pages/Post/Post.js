@@ -11,8 +11,9 @@ const Post = ({ userObj }) => {
   const [addUserComment, setAddUserComment] = useState("");
   const [addUserTopInfo, setAddUserTopInfo] = useState("");
   const [addUserBottomInfo, setAddUserBottomInfo] = useState("");
-  const [addUserSns, setAddUserSns] = useState("");
   const [addUserOuter, setAddUserOuter] = useState("");
+  const [addUserShoes, setAddUserShoes] = useState("");
+  const [addUserSns, setAddUserSns] = useState("");
   const [addUserLike, setAddUserLike] = useState(0);
   const [addUserLikeList, setAddUserLikeList] = useState([]);
   const [addUserStyleComments, setAddUserStyleComments] = useState([]);
@@ -39,6 +40,8 @@ const Post = ({ userObj }) => {
       setAddUserSns(value);
     } else if (name === "outer") {
       setAddUserOuter(value);
+    } else if (name === "shoes") {
+      setAddUserShoes(value);
     }
   };
 
@@ -58,6 +61,7 @@ const Post = ({ userObj }) => {
       top: addUserTopInfo,
       bottom: addUserBottomInfo,
       outer: addUserOuter,
+      shoes: addUserShoes,
       sns: addUserSns,
       createAt: new Date(),
       createId: userObj.uid,
@@ -117,7 +121,7 @@ const Post = ({ userObj }) => {
               name="sns"
               value={addUserSns}
               type="text"
-              placeholder="인스타그램 아이디 (필수)"
+              placeholder="인스타그램 or 닉네임 (필수)"
               maxLength={15}
               onChange={onPostChange}
             />
@@ -145,6 +149,15 @@ const Post = ({ userObj }) => {
               value={addUserOuter}
               type="text"
               placeholder="아우터 or 없음"
+              maxLength={15}
+              onChange={onPostChange}
+            />
+            <input
+              className="input-style"
+              name="shoes"
+              value={addUserShoes}
+              type="text"
+              placeholder="신발 or 없음"
               maxLength={15}
               onChange={onPostChange}
             />

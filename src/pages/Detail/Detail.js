@@ -97,6 +97,7 @@ const Detail = ({ userObj, userStyle }) => {
           <div>TOP : {userId?.top}</div>
           <div>Bottom : {userId?.bottom}</div>
           <div>Outer : {userId?.outer}</div>
+          <div>Shoes : {userId?.shoes}</div>
         </div>
 
         <button className="like-btn" onClick={onLikeCount}>
