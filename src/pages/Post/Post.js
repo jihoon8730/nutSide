@@ -14,8 +14,8 @@ const Post = ({ userObj }) => {
   const [addUserOuter, setAddUserOuter] = useState("");
   const [addUserShoes, setAddUserShoes] = useState("");
   const [addUserSns, setAddUserSns] = useState("");
-  const [addUserLike, setAddUserLike] = useState(0);
-  const [addUserLikeList, setAddUserLikeList] = useState([]);
+  const [addUserLike] = useState(0);
+  const [addUserLikeList] = useState([]);
   // const [addUserRanking, setAddUserRanking] = useState();
 
   const [attachment, setAttachment] = useState("");
