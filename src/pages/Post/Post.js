@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { storage } from "../../firebase";
 import { v4 } from "uuid";
@@ -16,7 +16,6 @@ const Post = ({ userObj }) => {
   const [addUserSns, setAddUserSns] = useState("");
   const [addUserLike, setAddUserLike] = useState(0);
   const [addUserLikeList, setAddUserLikeList] = useState([]);
-  const [addUserStyleComments, setAddUserStyleComments] = useState([]);
   // const [addUserRanking, setAddUserRanking] = useState();
 
   const [attachment, setAttachment] = useState("");
@@ -55,6 +54,7 @@ const Post = ({ userObj }) => {
     await uploadString(imageRef, attachment, "data_url");
     imageFileUrl = await getDownloadURL(ref(storage, imageRef));
 
+    const styleAddcheck = window.confirm("스타일을 등록 하시겠습니까?");
     //style data upload
     let styleInfoData = {
       comment: addUserComment,
@@ -68,29 +68,24 @@ const Post = ({ userObj }) => {
       imageUrl: imageFileUrl,
       like: addUserLike,
       likelist: addUserLikeList,
-      styleComments: addUserStyleComments,
       // ranking: addUserRanking,
     };
-    if (addUserSns === "") {
-      alert("인스타그램 계정을 입력해주세요.");
-    } else {
-      try {
-        const addStyleDatabasePush = await addDoc(
-          collection(db, "nutside"),
-          styleInfoData
-        );
-        setAddUserComment("");
-        setAddUserTopInfo("");
-        setAddUserBottomInfo("");
-        setAddUserSns("");
-        setAddUserOuter("");
-        setAttachment("");
-        console.log("docRef Id :", addStyleDatabasePush.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
+
+    if (styleAddcheck) {
+      if (addUserSns === "") {
+        alert("인스타그램 아이디 또는 이름을 입력해주세요.");
+      } else {
+        try {
+          const addStyleDatabasePush = await addDoc(
+            collection(db, "nutside"),
+            styleInfoData
+          );
+          console.log("docRef Id :", addStyleDatabasePush.id);
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+        goToPostList();
       }
-      window.confirm("스타일을 등록하시겠습니까?");
-      goToPostList();
     }
   };
 
