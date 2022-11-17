@@ -25,6 +25,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
       setUserStyle(userStyleArr);
     });
   }, []);
+
   return (
     <div className="wrap">
       {isLoggedIn ? <Navbar userObj={userObj} /> : null}

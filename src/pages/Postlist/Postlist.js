@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -8,6 +8,7 @@ import "./postlist.scss";
 
 const Postlist = ({ userStyle, setUserStyle }) => {
   const goToDetail = useNavigate();
+
   const onLikeTopSort = async () => {
     const q = query(collection(db, "nutside"), orderBy("like", "desc"));
     onSnapshot(q, (snapshot) => {
