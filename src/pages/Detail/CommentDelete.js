@@ -1,6 +1,7 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 import React from "react";
+import "./comentdelete.scss";
 
 const CommentDelete = ({ comments, userObj, userId }) => {
   const userStyleDoc = doc(db, "nutside", `${userId?.id}`);
@@ -17,11 +18,17 @@ const CommentDelete = ({ comments, userObj, userId }) => {
       {" "}
       <div className="comment-view-box">
         <div className="comment-list">
-          <span className="comment-list-nickname">
-            {`${comments?.name} : `}
-          </span>
-          {comments?.comment}
-          <span className="comment-list-maker"> {comments?.maker}</span>
+          <div>
+            <span className="comment-list-nickname">
+              {`${comments?.name}`}{" "}
+            </span>
+            <span className="comment-list-date">
+              {" "}
+              {`${comments?.createDate}`}&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span className="comment-list-maker">{comments?.maker}</span>
+          </div>
+          <div className="comment-list-comment">{comments?.comment}</div>
         </div>
         {comments?.createUserId === userObj?.uid ? (
           <div className="comment-delete-btn" onClick={onCommentDelete}>

@@ -101,32 +101,11 @@
     margin: 0px auto;
     height: auto;
     padding: 0px 20px;
-    border: 1px solid rgb(201, 201, 201);
 
     .comment-list-length {
       margin-top: 10px;
       font-size: 20px;
     }
-
-    .comment-view-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .comment-list {
-        margin: 10px 0px;
-        color: rgb(68, 68, 68);
-
-        .comment-list-nickname {
-          color: rgb(133, 133, 133);
-        }
-
-        .comment-list-maker {
-          color: rgb(254, 55, 55);
-        }
-      }
-    }
-    
   }
 }
 

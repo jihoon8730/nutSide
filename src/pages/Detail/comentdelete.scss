@@ -1,0 +1,48 @@
+.comment-view-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-bottom: 1px solid rgb(201, 201, 201);
+
+  .comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+    margin: 10px 0px;
+    color: rgb(68, 68, 68);
+
+    .comment-list-nickname {
+      color: rgb(19, 167, 193);
+    }
+
+    .comment-list-date {
+      font-size: 12px;
+      color: rgb(151, 151, 151);
+    }
+
+    .comment-list-maker {
+      color: rgb(223, 49, 49);
+    }
+  }
+
+  .comment-delete-btn {
+    cursor: pointer;
+  }
+}
+
+.comment-view-box:hover {
+  background-color: rgb(225, 225, 225);
+}
+
+@media (max-width: 450px) {
+  .comment-view-box {
+    .comment-list-comment {
+      width: 70vw;
+    }
+  }
+  
+}
