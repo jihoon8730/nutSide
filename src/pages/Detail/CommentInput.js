@@ -16,6 +16,7 @@ const CommentInput = ({ userId, userObj, userStyleDoc, userComments }) => {
 
   const onCommentSubmit = async (event) => {
     event.preventDefault();
+    const dt = new Date();
     if (commentsValue !== "") {
       if (userId?.createId === userObj?.uid) {
         await addDoc(collection(userStyleDoc, "repleComment"), {
@@ -23,6 +24,7 @@ const CommentInput = ({ userId, userObj, userStyleDoc, userComments }) => {
           createUserId: userObj?.uid,
           comment: commentsValue,
           date: new Date(),
+          createDate: `${dt.getFullYear()}. ${dt.getMonth()}. ${dt.getDate()}`,
           postUserId: userId?.id,
           maker: "작성자",
         });
@@ -32,6 +34,7 @@ const CommentInput = ({ userId, userObj, userStyleDoc, userComments }) => {
           createUserId: userObj?.uid,
           comment: commentsValue,
           date: new Date(),
+          createDate: `${dt.getFullYear()}. ${dt.getMonth()}. ${dt.getDate()}`,
           postUserId: userId?.id,
         });
       }
