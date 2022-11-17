@@ -39,7 +39,8 @@ const Detail = ({ userObj, userStyle }) => {
       }));
       setUserComments(userCommentArr);
     });
-  }, [userStyleDoc]);
+  }, [userStyle]);
+  console.log(userStyleDoc);
 
   const isLike = userId?.likelist.includes(userObj.uid);
   const onLikeCount = async () => {
