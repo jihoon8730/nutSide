@@ -24,7 +24,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
       }));
       setUserStyle(userStyleArr);
     });
-  }, []);
+  }, [userObj]);
 
   return (
     <div className="wrap">
