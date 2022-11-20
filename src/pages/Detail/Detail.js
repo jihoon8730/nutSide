@@ -7,7 +7,6 @@ import {
   onSnapshot,
   query,
   collection,
-  addDoc,
   orderBy,
 } from "firebase/firestore";
 import { useParams } from "react-router-dom";
