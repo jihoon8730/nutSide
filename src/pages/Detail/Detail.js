@@ -63,7 +63,7 @@ const Detail = ({ userObj, userStyle }) => {
         href={`https://www.instagram.com/${userId?.sns}/`}
         target="_blank"
       >
-        <p className="detail-title">{userId?.sns}</p>
+        <p className="detail-title">@{userId?.sns}</p>
       </a>
       <div className="detail-comment">{userId?.comment}</div>
       <div key={userId} className="detail-view">

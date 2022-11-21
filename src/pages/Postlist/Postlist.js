@@ -52,7 +52,7 @@ const Postlist = ({ userStyle, setUserStyle }) => {
               }}
             >
               <div className="postlist-title">
-                {styleInfo.sns}
+                @{styleInfo.sns}
                 <div className="title-like">
                   <FontAwesomeIcon icon={faHeart} />
                   {styleInfo.like}
