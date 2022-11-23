@@ -17,6 +17,8 @@
     .logo {
       width: 150px;
       height: auto;
+      background-color: black;
+      color: #eeeeee;
       font-family: $fontType-merriweather;
       font-size: 40px;
       text-align: center;
@@ -43,7 +45,6 @@
     height: 150px;
     display: flex;
     border: 0px;
-    background-color: rgb(184, 184, 184);
 
     .top {
       width: 500px;

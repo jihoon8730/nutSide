@@ -102,8 +102,8 @@ const Home = () => {
               />
             </div>
             <div className="title-bottom-right">
-              <p>OO</p>
-              <p>T D</p>
+              <p>너의</p>
+              <p>트렌드</p>
             </div>
           </div>
         </article>
