@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nutSide/static/css/main.ca30a3c6.css",
-    "main.js": "/nutSide/static/js/main.4201dd16.js",
+    "main.css": "/nutSide/static/css/main.8cde6a77.css",
+    "main.js": "/nutSide/static/js/main.2d6644c3.js",
     "index.html": "/nutSide/index.html",
-    "main.ca30a3c6.css.map": "/nutSide/static/css/main.ca30a3c6.css.map",
-    "main.4201dd16.js.map": "/nutSide/static/js/main.4201dd16.js.map"
+    "main.8cde6a77.css.map": "/nutSide/static/css/main.8cde6a77.css.map",
+    "main.2d6644c3.js.map": "/nutSide/static/js/main.2d6644c3.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca30a3c6.css",
-    "static/js/main.4201dd16.js"
+    "static/css/main.8cde6a77.css",
+    "static/js/main.2d6644c3.js"
   ]
 }
