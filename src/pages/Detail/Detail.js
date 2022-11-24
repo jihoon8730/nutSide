@@ -29,6 +29,9 @@ const Detail = ({ userObj, userStyle }) => {
     return style.id === id;
   });
 
+  console.log(userId.createId);
+  console.log(userObj.uid);
+
   const userStyleDoc = doc(db, "nutside", `${userId?.id}`);
   useEffect(() => {
     const q = query(
@@ -86,16 +89,18 @@ const Detail = ({ userObj, userStyle }) => {
           alt="image URL load fail..."
           width="200px"
         />
-        <div className="detail-delete-box">
-          <button
-            className="detail-delete"
-            onClick={() => {
-              onDeleteStyle();
-            }}
-          >
-            삭제
-          </button>
-        </div>
+        {userObj.uid === userId.createId ? (
+          <div className="detail-delete-box">
+            <button
+              className="detail-delete"
+              onClick={() => {
+                onDeleteStyle();
+              }}
+            >
+              삭제
+            </button>
+          </div>
+        ) : null}
 
         <div className="detail-contents">
           <div>TOP : {userId?.top}</div>
