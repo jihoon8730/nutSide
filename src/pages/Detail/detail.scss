@@ -42,32 +42,44 @@
       width: 100%;
       object-fit: cover;
     }
-  }
 
-  .detail-contents {
-    height: auto;
-    padding: 10px 10px 10px 15px;
-    background-color: rgb(37, 37, 37);
-    color: #eeeeee;
-    font-size: 20px;
-  }
+    .detail-delete {
+      width: 100%;
+      padding: 5px 10px 0px 0px;
+      font-size: 18px;
+      border: 0px;
+      background-color: transparent;
+      color: #eeeeee;
+      text-align: end;
+      cursor: pointer;
+    }
+  
 
-  .like-btn {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: absolute;
-    top: 2%;
-    left: 5%;
-    border: 0px;
-    color: #eeeeee;
-    background-color: transparent;
-    font-size: 40px;
-    cursor: pointer;
+    .detail-contents {
+      height: auto;
+      padding: 10px 10px 10px 15px;
+      background-color: rgb(37, 37, 37);
+      color: #eeeeee;
+      font-size: 20px;
+    }
 
-    .like-count {
-      font-size: 25px;
-      padding-top: 15px;
+    .like-btn {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      position: absolute;
+      top: 2%;
+      left: 5%;
+      border: 0px;
+      color: #eeeeee;
+      background-color: transparent;
+      font-size: 40px;
+      cursor: pointer;
+  
+      .like-count {
+        font-size: 25px;
+        padding-top: 15px;
+      }
     }
   }
 
@@ -128,6 +140,10 @@
 
     .detail-view {
       width: 75vw;
+
+      .detail-delete {
+        font-size: 14px;
+      }
 
       .detail-contents {
         font-size: 17px;
