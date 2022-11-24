@@ -43,14 +43,17 @@
       object-fit: cover;
     }
 
-    .detail-delete {
+    .detail-delete-box {
       width: 100%;
       padding: 5px 10px 0px 0px;
+      text-align: end;
+    }
+
+    .detail-delete {
       font-size: 18px;
       border: 0px;
       background-color: transparent;
       color: #eeeeee;
-      text-align: end;
       cursor: pointer;
     }
   

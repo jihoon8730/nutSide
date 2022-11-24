@@ -86,14 +86,17 @@ const Detail = ({ userObj, userStyle }) => {
           alt="image URL load fail..."
           width="200px"
         />
-        <button
-          className="detail-delete"
-          onClick={() => {
-            onDeleteStyle();
-          }}
-        >
-          삭제
-        </button>
+        <div className="detail-delete-box">
+          <button
+            className="detail-delete"
+            onClick={() => {
+              onDeleteStyle();
+            }}
+          >
+            삭제
+          </button>
+        </div>
+
         <div className="detail-contents">
           <div>TOP : {userId?.top}</div>
           <div>Bottom : {userId?.bottom}</div>
