@@ -29,9 +29,6 @@ const Detail = ({ userObj, userStyle }) => {
     return style.id === id;
   });
 
-  console.log(userId.createId);
-  console.log(userObj.uid);
-
   const userStyleDoc = doc(db, "nutside", `${userId?.id}`);
   useEffect(() => {
     const q = query(

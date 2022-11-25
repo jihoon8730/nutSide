@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./postlist.scss";
 
 const Postlist = ({ userStyle, setUserStyle }) => {
+  const [searchValue, setSearchValue] = useState("");
   const goToDetail = useNavigate();
 
   const onLikeTopSort = async () => {
@@ -31,6 +32,10 @@ const Postlist = ({ userStyle, setUserStyle }) => {
     });
   };
 
+  const onChangeSearch = (e) => {
+    setSearchValue(e.target.value);
+  };
+
   return (
     <div className="Postlist">
       <div className="like-rank">
@@ -41,32 +46,47 @@ const Postlist = ({ userStyle, setUserStyle }) => {
           등록순
         </button>
       </div>
+      <div className="search-box">
+        <input
+          className="search"
+          type="text"
+          value={searchValue}
+          placeholder="이름을 검색해 주세요"
+          onChange={onChangeSearch}
+        />
+      </div>
       <div className="postlist-box">
-        {userStyle.map((styleInfo) => {
-          return (
-            <div
-              className="postlist-cards"
-              key={styleInfo.id}
-              onClick={() => {
-                goToDetail(`/detail/${styleInfo.id}`);
-              }}
-            >
-              <div className="postlist-title">
-                @{styleInfo.sns}
-                <div className="title-like">
-                  <FontAwesomeIcon icon={faHeart} />
-                  {styleInfo.like}
+        {userStyle
+          .filter((styleInfo) => {
+            return styleInfo.sns
+              .toLowerCase()
+              .includes(searchValue.toLowerCase());
+          })
+          .map((styleInfo) => {
+            return (
+              <div
+                className="postlist-cards"
+                key={styleInfo.id}
+                onClick={() => {
+                  goToDetail(`/detail/${styleInfo.id}`);
+                }}
+              >
+                <div className="postlist-title">
+                  @{styleInfo.sns}
+                  <div className="title-like">
+                    <FontAwesomeIcon icon={faHeart} />
+                    {styleInfo.like}
+                  </div>
                 </div>
-              </div>
 
-              <img
-                className="postlist-image"
-                src={styleInfo.imageUrl}
-                alt="image load fail..."
-              ></img>
-            </div>
-          );
-        })}
+                <img
+                  className="postlist-image"
+                  src={styleInfo.imageUrl}
+                  alt="image load fail..."
+                ></img>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
