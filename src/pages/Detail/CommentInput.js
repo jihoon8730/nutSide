@@ -24,7 +24,9 @@ const CommentInput = ({ userId, userObj, userStyleDoc, userComments }) => {
           createUserId: userObj?.uid,
           comment: commentsValue,
           date: new Date(),
-          createDate: `${dt.getFullYear()}. ${dt.getMonth()}. ${dt.getDate()}`,
+          createDate: `${dt.getFullYear()}. ${
+            dt.getMonth() + 1
+          }. ${dt.getDate()}`,
           postUserId: userId?.id,
           maker: "작성자",
         });
@@ -34,7 +36,9 @@ const CommentInput = ({ userId, userObj, userStyleDoc, userComments }) => {
           createUserId: userObj?.uid,
           comment: commentsValue,
           date: new Date(),
-          createDate: `${dt.getFullYear()}. ${dt.getMonth()}. ${dt.getDate()}`,
+          createDate: `${dt.getFullYear()}. ${
+            dt.getMonth() + 1
+          }. ${dt.getDate()}`,
           postUserId: userId?.id,
         });
       }
