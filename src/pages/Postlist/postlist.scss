@@ -17,7 +17,7 @@
       margin-top: 30px;
       padding: 5px 15px;
       border: 1px solid rgb(68, 68, 68);
-      font-size: 20px;
+      font-size: 17px;
       background-color: rgb(68, 68, 68);
       color: #eeeeee;
       font-family: $fontType-notoSansKorean;
@@ -32,7 +32,7 @@
       margin-top: 30px;
       padding: 5px 15px;
       border: 1px solid rgb(68, 68, 68);
-      font-size: 20px;
+      font-size: 17px;
       background-color: rgb(68, 68, 68);
       color: #eeeeee;
       font-family: $fontType-notoSansKorean;
@@ -40,6 +40,19 @@
 
     .create-rank-btn:hover {
       cursor: pointer;
+      border-bottom: 1px solid rgb(68, 68, 68);
+    }
+  }
+
+  .search-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .search {
+      width: 200px;
+      background-color: transparent;
+      border: 0px;
       border-bottom: 1px solid rgb(68, 68, 68);
     }
   }
@@ -64,7 +77,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: 'Merriweather', serif;
-        font-size: 25px;
+        font-size: 22px;
         text-align: center;
         opacity: 0.8;
         color: #FFFFFF;

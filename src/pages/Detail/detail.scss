@@ -13,7 +13,7 @@
     color: rgb(37, 37, 37);
     text-decoration: none;
     .detail-title {
-      font-size: 60px;
+      font-size: 50px;
       font-family: $fontType-merriweather;
       text-align: center;
     }
@@ -26,8 +26,7 @@
     margin: 0px auto;
     margin-bottom: 50px;
     font-size: 17px;
-    font-family: $fontType-merriweather;
-    
+    font-family: $fontType-notoSansKorean;
     text-align: center;
   }
 
@@ -63,7 +62,7 @@
       padding: 10px 10px 10px 15px;
       background-color: rgb(37, 37, 37);
       color: #eeeeee;
-      font-size: 20px;
+      font-size: 17px;
     }
 
     .like-btn {
@@ -99,11 +98,11 @@
     border: 0px;
     border-bottom: 2px solid rgb(68, 68, 68);
     background-color: transparent;
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .comment-btn {
-    padding: 10px 20px;
+    padding: 7px 15px;
     margin-top: 20px;
     border: 0px;
     color: #eeeeee;
@@ -119,7 +118,7 @@
 
     .comment-list-length {
       margin-top: 10px;
-      font-size: 20px;
+      font-size: 17px;
     }
   }
 }
